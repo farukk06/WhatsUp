@@ -1,0 +1,19 @@
+{
+  "name": "whatsup",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Real-time messaging platform",
+  "workspaces": [
+    "apps/web",
+    "apps/api",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:api": "npm run start:dev --workspace=apps/api",
+    "build:web": "npm run build --workspace=apps/web",
+    "build:api": "npm run build --workspace=apps/api",
+    "lint:web": "npm run lint --workspace=apps/web",
+    "lint:api": "npm run lint --workspace=apps/api"
+  }
+}

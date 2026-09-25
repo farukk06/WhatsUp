@@ -82,9 +82,16 @@ Start the backend:
 npm run dev:api
 ```
 
-## Team
+## 👥 Team
 
-Developed by a team of four software developers.
+WhatsUp is developed by a team of four software developers.
+
+| Developer | Role | GitHub |
+|---|---|---|
+| Faruk Turnalı | Real-Time Developer | [@farukk06](https://github.com/farukk06) |
+| Yusuf Büyüktaş | Frontend Developer | [@Yusufbuyuktas](https://github.com/Yusufbuyuktas) |
+| Ali Caner Sezer | Backend & Database Developer | [@alicaners](https://github.com/alicaners) |
+| Umut Arda Ekiz | Media, DevOps & QA Developer | [@Uaekiz](https://github.com/Uaekiz) |
 
 ## Project Status
 

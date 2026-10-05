@@ -15,5 +15,8 @@
     "build:api": "npm run build --workspace=apps/api",
     "lint:web": "npm run lint --workspace=apps/web",
     "lint:api": "npm run lint --workspace=apps/api"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.4"
   }
 }

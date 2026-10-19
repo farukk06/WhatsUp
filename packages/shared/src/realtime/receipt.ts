@@ -1,4 +1,4 @@
-import type { RealtimeSchemaVersion } from "./common";
+import type { RealtimeSchemaVersion } from "./common.js";
 
 export type MessageDeliveredPayload = {
     conversationId: string;

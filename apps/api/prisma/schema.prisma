@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+model User {
+  id String @id @default(uuid()) @db.Uuid
+  email String @unique
+  displayName String
+  passwordHash String
+  createdAt DateTime @default(now())
+  sessions Session[]
+  memberships ConversationMember[]
+  messages Message[]
+}
+model Session {
+  id String @id @default(uuid()) @db.Uuid
+  userId String @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  refreshHash String @unique
+  expiresAt DateTime
+  revokedAt DateTime?
+  createdAt DateTime @default(now())
+  @@index([userId])
+}
+model Conversation {
+  id String @id @default(uuid()) @db.Uuid
+  createdAt DateTime @default(now())
+  nextSequence BigInt @default(1)
+  members ConversationMember[]
+  messages Message[]
+}
+model ConversationMember {
+  conversationId String @db.Uuid
+  userId String @db.Uuid
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  joinedAt DateTime @default(now())
+  @@id([conversationId, userId])
+  @@index([userId])
+}
+// Week 2 preparation only. No message write endpoint exists in Week 1.
+model Message {
+  id String @id @default(uuid()) @db.Uuid
+  conversationId String @db.Uuid
+  senderId String @db.Uuid
+  clientMessageId String @db.Uuid
+  sequence BigInt
+  createdAt DateTime @default(now())
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender User @relation(fields: [senderId], references: [id], onDelete: Restrict)
+  @@unique([conversationId, sequence])
+  @@unique([senderId, clientMessageId])
+}

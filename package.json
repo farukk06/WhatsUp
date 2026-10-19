@@ -18,5 +18,10 @@
   },
   "devDependencies": {
     "socket.io-client": "^4.8.4"
+  },
+  "overrides": {
+    "@prisma/config": {
+      "deepmerge-ts": "^8.0.0"
+    }
   }
 }

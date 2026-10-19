@@ -1,7 +1,14 @@
 import { io } from "socket.io-client";
 
+if (!process.env.ACCESS_TOKEN) {
+    console.error("Set ACCESS_TOKEN to a valid access token; anonymous connections are rejected.");
+    process.exit(1);
+}
 const socket = io("http://localhost:3001/chat", {
     transports: ["websocket"],
+    auth: { token: process.env.ACCESS_TOKEN },
+    timeout: 5000,
+    reconnection: false,
 });
 
 socket.on("connect", () => {

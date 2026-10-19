@@ -1,7 +1,7 @@
 import type {
     RealtimeSchemaVersion,
     SocketAck,
-} from "./common";
+} from "./common.js";
 
 export type MessageType =
     | "TEXT"

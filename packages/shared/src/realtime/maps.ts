@@ -3,28 +3,28 @@ import type {
     ConversationJoinPayload,
     ConversationLeaveAck,
     ConversationLeavePayload,
-} from "./conversation";
+} from "./conversation.js";
 
 import type {
     ConversationReadPayload,
     MessageDeliveredPayload,
     MessageReceiptPayload,
-} from "./receipt";
+} from "./receipt.js";
 
 import type {
     MessageNewPayload,
     MessageSendAck,
     MessageSendPayload,
-} from "./message";
+} from "./message.js";
 
 import type {
     TypingStartPayload,
     TypingStopPayload,
     TypingUpdatePayload,
-} from "./typing";
+} from "./typing.js";
 
-import type { PresenceUpdatePayload } from "./presence";
-import type { ServerErrorPayload } from "./error";
+import type { PresenceUpdatePayload } from "./presence.js";
+import type { ServerErrorPayload } from "./error.js";
 
 export interface ClientToServerEvents {
     "conversation:join": (

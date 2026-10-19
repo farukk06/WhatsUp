@@ -1,7 +1,7 @@
 import type {
     RealtimeErrorCode,
     RealtimeSchemaVersion,
-} from "./common";
+} from "./common.js";
 
 export type ServerErrorPayload = {
     schemaVersion: RealtimeSchemaVersion;

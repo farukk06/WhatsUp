@@ -1,2 +1,2 @@
 export const SHARED_PACKAGE_VERSION = "0.1.0";
-export * from "./realtime";
+export * from "./realtime/index.js";

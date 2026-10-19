@@ -1,4 +1,4 @@
-import type { SocketAck } from "./common";
+import type { SocketAck } from "./common.js";
 
 export type ConversationJoinPayload = {
     conversationId: string;
